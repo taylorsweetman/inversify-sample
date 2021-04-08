@@ -1,0 +1,15 @@
+{
+  "name": "sample_app",
+  "version": "1.0.0",
+  "description": "dependency injection sample",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Taylor Sweetman",
+  "license": "ISC",
+  "devDependencies": {
+    "injectify": "^2.3.5",
+    "typescript": "^4.2.4"
+  }
+}
