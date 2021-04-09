@@ -1,8 +1,15 @@
-const axios = require('axios');
+import { myContainer } from './inversify.config';
+import { TYPES } from './types';
+import { Manager } from './interfaces';
+import { ApiManager } from './entities';
 
-const ENDPOINT = 'https://jsonplaceholder.typicode.com/todos';
+const manager: ApiManager = myContainer.get<Manager>(TYPES.Manager);
 
-(async () => {
-	const payload = await axios.get(ENDPOINT);
-	console.log(payload);
-})();
+manager
+	.fetchData('https://jsonplaceholder.typicode.com/', 'todos')
+	.then((data) => {
+		console.log(data);
+	})
+	.catch((err) => {
+		console.error(err);
+	});
