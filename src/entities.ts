@@ -1,9 +1,10 @@
-import { Container, injectable, inject } from 'inversify';
+import { injectable, inject } from 'inversify';
 import 'reflect-metadata';
 import axios from 'axios';
 import { Client, Manager } from './interfaces';
 import { TYPES } from './types';
 
+@injectable()
 export class ApiManager implements Manager {
 	readonly _client: Client;
 
