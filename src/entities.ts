@@ -32,7 +32,6 @@ export class TodoClient implements Client {
 		} catch (err) {
 			throw new Error(err);
 		}
-
 		return payload;
 	}
 }

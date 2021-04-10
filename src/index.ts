@@ -5,11 +5,15 @@ import { ApiManager } from './entities';
 
 const manager: ApiManager = myContainer.get<Manager>(TYPES.Manager);
 
-manager
-	.fetchData('https://jsonplaceholder.typicode.com/', 'todos')
-	.then((data) => {
+(async () => {
+	let data: string;
+	try {
+		data = await manager.fetchData(
+			'https://jsonplaceholder.typicode.com/',
+			'todos'
+		);
 		console.log(data);
-	})
-	.catch((err) => {
+	} catch (err) {
 		console.error(err);
-	});
+	}
+})();
