@@ -12,10 +12,10 @@ export class ApiManager implements Manager {
 		this._client = client;
 	}
 
-	async fetchData(endpoint: string, query: string): Promise<string> {
+	async fetchData(endpoint: string, path: string): Promise<string> {
 		let data: string;
 		try {
-			data = await this._client.get(endpoint, query);
+			data = await this._client.get(endpoint, path);
 		} catch (err) {
 			throw new Error(err);
 		}
@@ -25,10 +25,10 @@ export class ApiManager implements Manager {
 
 @injectable()
 export class TodoClient implements Client {
-	async get(endpoint: string, query: string): Promise<string> {
+	async get(endpoint: string, path: string): Promise<string> {
 		let payload: string;
 		try {
-			payload = (await axios.get(endpoint + query)).data;
+			payload = (await axios.get(endpoint + path)).data;
 		} catch (err) {
 			throw new Error(err);
 		}

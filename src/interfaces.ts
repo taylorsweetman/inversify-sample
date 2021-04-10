@@ -1,8 +1,8 @@
 export interface Manager {
 	readonly _client: Client;
-	fetchData(endpoint: string, query: string): Promise<string>;
+	fetchData(endpoint: string, path: string): Promise<string>;
 }
 
 export interface Client {
-	get(endpoint: string, query: string): Promise<string>;
+	get(endpoint: string, path: string): Promise<string>;
 }
