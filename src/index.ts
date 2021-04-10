@@ -5,7 +5,7 @@ import { ApiManager } from './entities';
 
 const manager: ApiManager = myContainer.get<Manager>(TYPES.Manager);
 
-(async () => {
+const integrationTest = (async () => {
 	let data: string;
 	try {
 		data = await manager.fetchData(
