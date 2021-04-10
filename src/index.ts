@@ -9,8 +9,8 @@ const integrationTest = (async () => {
 	let data: string;
 	try {
 		data = await manager.fetchData(
-			'https://jsonplaceholder.typicode.com/',
-			'todos'
+			'https://jsonplaceholder.typicode.com',
+			'/todos'
 		);
 		console.log(data);
 	} catch (err) {
