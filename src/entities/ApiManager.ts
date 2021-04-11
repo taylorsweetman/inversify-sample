@@ -16,7 +16,7 @@ export class ApiManager implements Manager {
 		try {
 			data = await this._client.get(endpoint, path);
 		} catch (err) {
-			throw new Error(err);
+			throw new Error('BAD_FETCH');
 		}
 		return data;
 	}

@@ -1,23 +1,24 @@
-import { injectable, inject } from 'inversify';
+import { AxiosInstance } from 'axios';
+import { inject, injectable } from 'inversify';
 import 'reflect-metadata';
-import { AxiosStatic } from 'axios';
 import { Client } from '../interfaces';
 import { TYPES } from '../types';
 
 @injectable()
 export class TodoClient implements Client {
-	readonly _axios: AxiosStatic;
+	readonly _axios: AxiosInstance;
 
-	constructor(@inject(TYPES.Axios) axios: AxiosStatic) {
+	constructor(@inject(TYPES.Axios) axios: AxiosInstance) {
 		this._axios = axios;
 	}
 
 	async get(endpoint: string, path: string): Promise<string> {
 		let payload: string;
 		try {
-			payload = (await this._axios.get(endpoint + path)).data;
+			const resp = await this._axios.get(endpoint + path)
+			payload = resp.data;
 		} catch (err) {
-			throw new Error(err);
+			throw new Error('BAD_GET');
 		}
 		return payload;
 	}

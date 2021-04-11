@@ -27,3 +27,10 @@ test('test ApiManager fetchData() returns correct first element', async () => {
 	expect(managerDataObj).toBeTruthy;
 	expect(managerDataObj[0].id).toBe(1);
 });
+
+test('test ApiManager bad construction', async () => {
+	const badlyConstructedManager = new ApiManager(null);
+	await badlyConstructedManager.fetchData('', '').catch((err) => {
+		expect(err).toEqual(new Error('BAD_FETCH'))
+	});
+});

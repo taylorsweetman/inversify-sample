@@ -7,7 +7,7 @@
 		"start": "babel-node -x \".ts\" src/index.ts",
 		"test": "npm run check-types && npm run unit-test",
 		"check-types": "tsc",
-		"unit-test": "jest"
+		"unit-tests": "jest --coverage"
 	},
 	"author": "Taylor Sweetman",
 	"license": "ISC",
