@@ -23,12 +23,12 @@ test('test TodoClient construction w/ mocked axios', () => {
 	expect(clientWithMockedAxios._axios).toBeTruthy;
 });
 
-test('test TodoClient get() shape w/ mocked TodoClient', async () => {
+test('test TodoClient get() shape w/ mocked TodoClient', () => {
 	expect(clientGetData).toBeTruthy;
 	expect(isJson(clientGetData)).toBe(true);
 });
 
-test('test TodoClient get() returns correct first element', async () => {
+test('test TodoClient get() returns correct first element', () => {
 	const managerDataObj = JSON.parse(clientGetData);
 	expect(managerDataObj).toBeTruthy;
 	expect(managerDataObj[0].id).toBe(1);

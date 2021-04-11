@@ -18,17 +18,17 @@ beforeEach(async () => {
 	managerDataJson = await managerWithMockedClient.fetchData('', '');
 });
 
-test('test ApiManager construction w/ mocked TodoClient', async () => {
+test('test ApiManager construction w/ mocked TodoClient', () => {
 	expect(managerWithMockedClient).toBeTruthy;
 	expect(mockedClient.get).toBeCalledTimes(1);
 });
 
-test('test ApiManager fetchData() shape w/ mocked TodoClient', async () => {
+test('test ApiManager fetchData() shape w/ mocked TodoClient', () => {
 	expect(managerDataJson).toBeTruthy;
 	expect(isJson(managerDataJson)).toBe(true);
 });
 
-test('test ApiManager fetchData() returns correct first element', async () => {
+test('test ApiManager fetchData() returns correct first element', () => {
 	const managerDataObj = JSON.parse(managerDataJson);
 	expect(managerDataObj).toBeTruthy;
 	expect(managerDataObj[0].id).toBe(1);

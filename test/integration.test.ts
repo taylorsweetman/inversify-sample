@@ -12,9 +12,9 @@ import { isJson } from './api/functions';
 
 const ENDPOINT = 'https://jsonplaceholder.typicode.com';
 const PATH = '/todos';
-const manager: ApiManager = myContainer.get<Manager>(TYPES.Manager);
 
 test('integration test', async () => {
+	const manager: ApiManager = myContainer.get<Manager>(TYPES.Manager);
 	expect(manager).toBeTruthy;
 	expect(manager._client).toBeTruthy;
 	const data = await manager.fetchData(ENDPOINT, PATH);
