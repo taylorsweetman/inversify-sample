@@ -4,9 +4,9 @@
  * @group unit
  */
 
-import { TodoClient } from '../../src/entities/TodoClient';
 import { ApiManager } from '../../src/entities/ApiManager';
-import { isJson, initMockClient } from '../api/functions';
+import { TodoClient } from '../../src/entities/TodoClient';
+import { initMockClient, isJson } from '../api/functions';
 
 var mockedClient: TodoClient;
 var managerWithMockedClient: ApiManager;

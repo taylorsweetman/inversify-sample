@@ -15,7 +15,7 @@ export class TodoClient implements Client {
 	async get(endpoint: string, path: string): Promise<string> {
 		let payload: string;
 		try {
-			const resp = await this._axios.get(endpoint + path)
+			const resp = await this._axios.get(endpoint + path);
 			payload = JSON.stringify(resp.data);
 		} catch (err) {
 			throw new Error('BAD_GET');

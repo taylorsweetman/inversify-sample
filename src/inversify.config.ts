@@ -1,9 +1,9 @@
+import axios, { AxiosStatic } from 'axios';
 import { Container } from 'inversify';
-import { TYPES } from './types';
-import { Client, Manager } from './interfaces';
 import { ApiManager } from './entities/ApiManager';
 import { TodoClient } from './entities/TodoClient';
-import axios, { AxiosStatic } from 'axios';
+import { Client, Manager } from './interfaces';
+import { TYPES } from './types';
 
 const myContainer = new Container();
 myContainer.bind<Client>(TYPES.Client).to(TodoClient);

@@ -1,7 +1,7 @@
+import { ApiManager } from './entities/ApiManager';
+import { Manager } from './interfaces';
 import { myContainer } from './inversify.config';
 import { TYPES } from './types';
-import { Manager } from './interfaces';
-import { ApiManager } from './entities/ApiManager';
 
 const manager: ApiManager = myContainer.get<Manager>(TYPES.Manager);
 

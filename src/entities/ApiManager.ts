@@ -1,4 +1,4 @@
-import { injectable, inject } from 'inversify';
+import { inject, injectable } from 'inversify';
 import 'reflect-metadata';
 import { Client, Manager } from '../interfaces';
 import { TYPES } from '../types';
