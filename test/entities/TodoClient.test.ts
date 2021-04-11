@@ -1,3 +1,9 @@
+/**
+ * unit tests
+ *
+ * @group unit
+ */
+
 import { AxiosInstance } from 'axios';
 import { TodoClient } from '../../src/entities/TodoClient';
 import { initMockAxios, isJson } from '../api/functions';

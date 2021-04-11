@@ -1,3 +1,9 @@
+/**
+ * unit tests
+ *
+ * @group integration
+ */
+
 import { ApiManager } from '../src/entities/ApiManager';
 import { Manager } from '../src/interfaces';
 import { myContainer } from '../src/inversify.config';

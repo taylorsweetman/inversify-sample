@@ -1,3 +1,9 @@
+/**
+ * unit tests
+ *
+ * @group test-the-test
+ */
+
 import { isJson } from './functions';
 
 test('test custom code -- isJson', () => {

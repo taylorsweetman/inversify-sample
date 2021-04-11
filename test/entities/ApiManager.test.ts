@@ -1,3 +1,9 @@
+/**
+ * unit tests
+ *
+ * @group unit
+ */
+
 import { TodoClient } from '../../src/entities/TodoClient';
 import { ApiManager } from '../../src/entities/ApiManager';
 import { isJson, initMockClient } from '../api/functions';
@@ -31,6 +37,6 @@ test('test ApiManager fetchData() returns correct first element', async () => {
 test('test ApiManager bad construction', async () => {
 	const badlyConstructedManager = new ApiManager(null);
 	await badlyConstructedManager.fetchData('', '').catch((err) => {
-		expect(err).toEqual(new Error('BAD_FETCH'))
+		expect(err).toEqual(new Error('BAD_FETCH'));
 	});
 });
