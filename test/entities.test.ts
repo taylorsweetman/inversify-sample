@@ -1,8 +1,6 @@
-import { ApiManager, TodoClient } from '../src/entities';
-
-test('test custom code -- isJson', () => {
+test('test custom code --- isJson', () => {
 	const goodJson =
-		'{"testInt": 55, "testList": [1, 2, 3], "testStr": "Hello World"}';
+		'{"testNum": 55, "testList": [1, 2, 3], "testStr": "Hello World"}';
 	const badJson = '{fghjdvb}';
 	const emptyStr = '';
 
