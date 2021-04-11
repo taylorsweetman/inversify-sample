@@ -1,8 +1,17 @@
+import axios, { AxiosInstance } from 'axios';
 import { TodoClient } from '../../src/entities/TodoClient';
 import mockData from './mockdata.json';
 
+export function initMockAxios(): AxiosInstance {
+	jest.mock('axios');
+	const mockedAxios = axios as jest.Mocked<typeof axios>;
+	const resp = { data: mockData };
+	mockedAxios.get = jest.fn().mockResolvedValue(resp);
+	return mockedAxios;
+}
+
 export function initMockClient(): TodoClient {
-	var mockClient: TodoClient = jest.createMockFromModule(
+	const mockClient: TodoClient = jest.createMockFromModule(
 		'../../src/entities/TodoClient'
 	);
 	mockClient.get = jest.fn(() => {
